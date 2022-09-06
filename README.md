@@ -1,7 +1,7 @@
 # gradle-release plugin
 
 [![Build Status](https://github.com/researchgate/gradle-release/actions/workflows/tests.yaml/badge.svg)](https://github.com/researchgate/gradle-release/actions/workflows/tests.yaml)
-[Gradle Plugin page](https://plugins.gradle.org/plugin/net.researchgate.release)
+[Gradle Plugin page](https://plugins.gradle.org/plugin/com.calincosma.release)
 
 ## Introduction
 
@@ -37,18 +37,18 @@ buildscript {
     }
   }
   dependencies {
-    classpath 'net.researchgate:gradle-release:3.0.1'
+    classpath 'com.calincosma:gradle-release:3.0.1'
   }
 }
 
-apply plugin: 'net.researchgate.release'
+apply plugin: 'com.calincosma.release'
 ```
 
 ### Plugin DSL
 
 ```groovy
 plugins {
-  id 'net.researchgate.release' version '3.0.1'
+  id 'com.calincosma.release' version '3.0.1'
 }
 ```
 
@@ -223,10 +223,10 @@ release {
     ]
     pushReleaseVersionBranch = null
     scmAdapters = [
-        net.researchgate.release.GitAdapter,
-        net.researchgate.release.SvnAdapter,
-        net.researchgate.release.HgAdapter,
-        net.researchgate.release.BzrAdapter
+        com.calincosma.release.GitAdapter,
+        com.calincosma.release.SvnAdapter,
+        com.calincosma.release.HgAdapter,
+        com.calincosma.release.BzrAdapter
     ]
 
     git {
@@ -248,21 +248,21 @@ release {
 ### Kotlin DSL Example
 
 ``` build.gradle.kts
-import net.researchgate.release.ReleaseExtension
+import com.calincosma.release.ReleaseExtension
 repositories {
     maven {
       url 'https://plugins.gradle.org/m2/'
     }
   }
   dependencies {
-    classpath 'net.researchgate:gradle-release:3.0.1'
+    classpath 'com.calincosma:gradle-release:3.0.1'
   }
 
 apply(plugin = "base")
-apply(plugin = "net.researchgate.release")
+apply(plugin = "com.calincosma.release")
 
 configure<ReleaseExtension> {
-    ignoredSnapshotDependencies.set(listOf("net.researchgate:gradle-release"))
+    ignoredSnapshotDependencies.set(listOf("com.calincosma:gradle-release"))
     with(git) {
         requireBranch.set("master")
         // to disable branch verification: requireBranch.set(null as String?)

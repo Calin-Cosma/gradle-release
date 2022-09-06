@@ -212,7 +212,7 @@ release {
 
 ### Changes
 
-* Package of classes had to be changed from ```release```to ```net.researchgate.release```. (This is only relevant if you imported some of the classes directly in your code.)
+* Package of classes had to be changed from ```release```to ```com.calincosma.release```. (This is only relevant if you imported some of the classes directly in your code.)
 * COMMON: Better error message if updating of version fails
 
 ### Bugfixes
