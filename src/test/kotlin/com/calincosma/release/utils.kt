@@ -8,7 +8,7 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 import org.gradle.testkit.runner.BuildResult
 import org.gradle.testkit.runner.GradleRunner
@@ -63,7 +63,7 @@ fun File.applyPlugin() {
 
 fun File.addTestAdapter() {
     appendText("""
-            class TestAdapter(project: Project, attributes: net.researchgate.release.Attributes) : net.researchgate.release.BaseScmAdapter(project, attributes) {
+            class TestAdapter(project: Project, attributes: com.calincosma.release.Attributes) : com.calincosma.release.BaseScmAdapter(project, attributes) {
                 override fun isSupported(directory: File): Boolean = true
 
                 override fun init() {}

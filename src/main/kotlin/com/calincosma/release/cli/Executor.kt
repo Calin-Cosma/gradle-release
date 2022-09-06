@@ -13,7 +13,7 @@
  *
  */
 
-package net.researchgate.release.cli
+package com.calincosma.release.cli
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking

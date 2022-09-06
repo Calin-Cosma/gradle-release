@@ -13,9 +13,9 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
-import net.researchgate.release.cli.Executor
+import com.calincosma.release.cli.Executor
 import org.gradle.api.GradleException
 import org.gradle.api.Project
 import org.slf4j.Logger

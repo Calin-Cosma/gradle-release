@@ -13,7 +13,7 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 import org.gradle.api.GradleException
 import org.gradle.api.Project
@@ -105,7 +105,8 @@ class GitAdapter(project: Project, attributes: Attributes) : BaseScmAdapter(proj
 
     override fun commit(message: String) {
         executor.exec("git", "commit", "-m", message, if (extension.git.commitVersionFileOnly) project.file(extension.versionPropertyFile).canonicalPath else "-a",
-                directory = workingDirectory, errorPatterns = BASIC_ERROR_PATTERNS)
+                directory = workingDirectory, errorPatterns = BASIC_ERROR_PATTERNS
+        )
         val branch = (extension.git.pushToBranchPrefix?.let { "HEAD:$it" } ?: "") + gitCurrentBranch()
         push.add(listOfNotNull(extension.git.pushToRemote, branch))
     }

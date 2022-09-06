@@ -8,7 +8,7 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 inline fun <T> getIf(shouldGet: Boolean, get: () -> T): T? = if(shouldGet) get() else null
 

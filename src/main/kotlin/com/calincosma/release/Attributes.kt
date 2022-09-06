@@ -8,7 +8,7 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 class Attributes {
     var usesSnapshot = false

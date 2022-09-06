@@ -13,9 +13,9 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
-import net.researchgate.release.cli.Executor
+import com.calincosma.release.cli.Executor
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir

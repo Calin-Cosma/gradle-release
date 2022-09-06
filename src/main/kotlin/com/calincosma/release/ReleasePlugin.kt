@@ -13,7 +13,7 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin

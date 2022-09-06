@@ -13,11 +13,10 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 import org.eclipse.jgit.api.Git
 import org.eclipse.jgit.api.ResetCommand
-import org.eclipse.jgit.lib.StoredConfig
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.io.TempDir

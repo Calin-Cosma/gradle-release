@@ -13,13 +13,12 @@
  *
  */
 
-package net.researchgate.release.cli
+package com.calincosma.release.cli
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import strikt.api.expectThat
 import strikt.assertions.contains
-import strikt.assertions.matches
 
 class ExecutorTests {
     lateinit var executor: Executor

@@ -13,7 +13,7 @@
  *
  */
 
-package net.researchgate.release
+package com.calincosma.release
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
