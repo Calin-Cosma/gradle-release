@@ -206,7 +206,7 @@ class ReleasePluginTests {
         subBuild.writeText("""
             plugins {
                 java
-                id("com.faendir.gradle.release") version "3.3.1"
+                id("com.faendir.gradle.release")
             }
             
             tasks.register("printTaskPaths") {
