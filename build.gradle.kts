@@ -9,7 +9,7 @@
  */
 
 plugins {
-    kotlin("jvm") version "1.3.72"
+    kotlin("jvm") version "1.7.10"
     `java-gradle-plugin`
     idea
     id("com.gradle.plugin-publish") version "0.12.0"
@@ -17,9 +17,11 @@ plugins {
     id("com.faendir.gradle.release") version "3.3.1"
 }
 
-group="com.faendir.gradle"
+group="com.calincosma"
 
 repositories {
+    mavenLocal()
+    mavenCentral()
     jcenter()
 }
 
@@ -48,24 +50,18 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 gradlePlugin {
     plugins {
         create("releasePlugin") {
-            id = "com.faendir.gradle.release"
+            id = "com.calincosma.gradle-release"
+            displayName = "Gradle Release Plugin"
+            description = "gradle-release is a plugin for providing a Maven-like release process to project using Gradle."
             implementationClass = "net.researchgate.release.ReleasePlugin"
         }
     }
 }
 
 pluginBundle {
-    website = "https://github.com/F43nd1r/gradle-release"
-    vcsUrl = "https://github.com/F43nd1r/gradle-release"
-    description = "gradle-release is a plugin for providing a Maven-like release process to project using Gradle."
-
-    (plugins) {
-        "releasePlugin" {
-            displayName = "Gradle Release Plugin"
-            tags = listOf("release", "git")
-            version = project.version.toString()
-        }
-    }
+    website = "https://github.com/calincosma/gradle-release"
+    vcsUrl = "https://github.com/calincosma/gradle-release"
+    tags = listOf("release", "git")
 }
 
 publishing {
@@ -74,10 +70,22 @@ publishing {
             from(components["java"])
         }
     }
+    repositories {
+        maven {
+            name = "localPluginRepository"
+            url = uri("../local-plugin-repository")
+        }
+    }
 }
 
 release {
     tagTemplate = "v\$version"
+    failOnCommitNeeded = false
+    failOnUnversionedFiles = false
+    failOnPublishNeeded = false
+    git {
+        requireBranch = "kotlin"
+    }
 }
 
 tasks.named("afterReleaseBuild").configure {
