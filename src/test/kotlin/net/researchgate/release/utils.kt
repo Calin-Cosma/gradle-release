@@ -55,7 +55,7 @@ fun File.applyPlugin() {
     appendText("""
             plugins {
                 java
-                id("com.faendir.gradle.release")
+                id("com.faendir.gradle.release") version "3.3.1"
             }
             
         """.trimIndent())
