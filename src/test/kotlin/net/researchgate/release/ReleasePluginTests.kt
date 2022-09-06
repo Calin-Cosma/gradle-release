@@ -206,7 +206,7 @@ class ReleasePluginTests {
         subBuild.writeText("""
             plugins {
                 java
-                id("com.faendir.gradle.release")
+                id("com.calincosma.gradle.release")
             }
             
             tasks.register("printTaskPaths") {

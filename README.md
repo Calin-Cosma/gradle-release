@@ -31,13 +31,13 @@ The gradle-release plugin will work with Gradle 6.5 and beyond
 kotlin:
 ```kotlin
 plugins {
-  id("com.faendir.gradle.release") version "3.3.1"
+  id("com.calincosma.gradle.release") version "3.3.1"
 }
 ```
 groovy:
 ```groovy
 plugins {
-  id 'com.faendir.gradle.release' version '3.3.1'
+  id 'com.calincosma.gradle.release' version '3.3.1'
 }
 ```
 

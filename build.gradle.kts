@@ -17,7 +17,7 @@ plugins {
     id("com.faendir.gradle.release") version "3.3.1"
 }
 
-group="com.faendir.gradle"
+group="com.calincosma"
 
 repositories {
     jcenter()
@@ -48,7 +48,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 gradlePlugin {
     plugins {
         create("releasePlugin") {
-            id = "com.faendir.gradle.release"
+            id = "com.calincosma.gradle.release"
             implementationClass = "net.researchgate.release.ReleasePlugin"
         }
     }

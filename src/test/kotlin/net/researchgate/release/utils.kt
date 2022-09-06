@@ -55,7 +55,7 @@ fun File.applyPlugin() {
     appendText("""
             plugins {
                 java
-                id("com.faendir.gradle.release")
+                id("com.calincosma.gradle.release")
             }
             
         """.trimIndent())
