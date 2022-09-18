@@ -71,11 +71,11 @@ publishing {
         }
     }
     repositories {
-//        maven {
-//            name = "localPluginRepository"
-//            url = uri("../local-plugin-repository")
-//        }
-        mavenLocal()
+        maven {
+            name = "localPluginRepository"
+            url = uri("../local-plugin-repository")
+        }
+//        mavenLocal()
     }
 }
 
