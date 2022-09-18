@@ -129,7 +129,7 @@ open class PluginHelper {
         private fun promptYesOrNo(message: String, defaultValue: Boolean = false): Boolean {
             val defaultStr = if (defaultValue) "Y" else "n"
             val consoleVal = readLine("$message (Y|n)") ?: defaultStr
-            return consoleVal.toLowerCase().startsWith("y")
+            return consoleVal.lowercase().startsWith("y")
         }
 
         private val LINE_SEP = System.getProperty("line.separator")
