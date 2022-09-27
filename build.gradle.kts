@@ -12,9 +12,10 @@ plugins {
     kotlin("jvm") version "1.7.10"
     `java-gradle-plugin`
     idea
-    id("com.gradle.plugin-publish") version "0.12.0"
     `maven-publish`
-    id("com.faendir.gradle.release") version "3.3.1"
+    id("com.calincosma.gradle-release") version "0.0.27"
+//    id("com.gradle.plugin-publish") version "1.0.0"
+//    id("com.faendir.gradle.release") version "3.3.1"
 }
 
 group="com.calincosma"
@@ -22,7 +23,9 @@ group="com.calincosma"
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
+//    maven {
+//        url = uri("https://plugins.gradle.org/m2/")
+//    }
 }
 
 dependencies {
@@ -58,11 +61,11 @@ gradlePlugin {
     }
 }
 
-pluginBundle {
-    website = "https://github.com/calincosma/gradle-release"
-    vcsUrl = "https://github.com/calincosma/gradle-release"
-    tags = listOf("release", "git")
-}
+//pluginBundle {
+//    website = "https://github.com/calincosma/gradle-release"
+//    vcsUrl = "https://github.com/calincosma/gradle-release"
+//    tags = listOf("release", "git")
+//}
 
 publishing {
     publications {
@@ -75,7 +78,6 @@ publishing {
             name = "localPluginRepository"
             url = uri("../local-plugin-repository")
         }
-//        mavenLocal()
     }
 }
 
@@ -89,7 +91,7 @@ release {
     }
 }
 
-tasks.named("afterReleaseBuild").configure {
-    dependsOn("publishPlugins")
-}
+//tasks.named("afterReleaseBuild").configure {
+//    dependsOn("publishPlugins")
+//}
 
