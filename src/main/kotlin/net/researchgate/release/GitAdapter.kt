@@ -67,7 +67,7 @@ class GitAdapter(project: Project, attributes: Attributes) : BaseScmAdapter(proj
         releaseBranch = extension.pushReleaseVersionBranch ?: workingBranch
         tag = null
         extension.git.requireBranch?.let {
-            log.info("**** Testing branch $it *****")
+            log.error("**** Testing branch $it *****")
             if (!Regex(it).matches(workingBranch)) {
                 throw GradleException("""Current Git branch is "$workingBranch" and not "${extension.git.requireBranch}".""")
             }

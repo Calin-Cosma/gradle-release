@@ -91,7 +91,7 @@ release {
     }
 }
 
-//tasks.named("afterReleaseBuild").configure {
-//    dependsOn("publishPlugins")
-//}
+tasks.named("afterReleaseBuild").configure {
+    dependsOn("publish")
+}
 
