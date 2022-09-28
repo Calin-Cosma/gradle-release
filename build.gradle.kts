@@ -13,7 +13,7 @@ plugins {
     `java-gradle-plugin`
     idea
     `maven-publish`
-    id("com.calincosma.gradle-release") version "0.0.27"
+    id("com.calincosma.gradle-release") version "0.0.31"
 //    id("com.gradle.plugin-publish") version "1.0.0"
 //    id("com.faendir.gradle.release") version "3.3.1"
 }
@@ -87,7 +87,7 @@ release {
     failOnUnversionedFiles = false
     failOnPublishNeeded = false
     git {
-        requireBranch = "kotlin"
+        requireBranch = "kotlin|main|whatever"
     }
 }
 
